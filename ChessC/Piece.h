@@ -1,17 +1,13 @@
 #pragma once
 #include <bitset>
 
-typedef Square* SquarePtr;
-
 class Piece
 {
 public:
 	template <int> class bitset;
-	bitset<8>b(int pieceType);
 	Piece(bool white);
-	virtual void move(int row, int column) = 0;
+	virtual bool move(int orow, int ocol, int nrow, int ncol) = 0;
 	bool isWhite();
-	SquarePtr currentSquare;
 
 protected:
 	bool white;
@@ -26,6 +22,7 @@ protected:
 
 	const int WHITE = 8;
 	const int BLACK = 16;
+
 
 private:
 

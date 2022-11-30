@@ -5,14 +5,15 @@
 class Rook : public Piece
 {
 public:
+	Rook();
 	Rook(bool white);
-	void move(int row, int column);
+	bool move(int orow, int ocol, int nrow, int ncol);
 
-private:
+private:/*
 	SquarePtr north;
 	SquarePtr south;
 	SquarePtr east;
-	SquarePtr west;
+	SquarePtr west;*/
 
 
 };

@@ -2,16 +2,19 @@
 //
 
 #include <iostream>
-#include "Rook.h"
 #include <bitset>
+#include "Board.h"
+#include "Rook.h"
+#include "gBoard.h"
+
+Board b;
+
 using namespace std;
 
 int main()
 {
-    //cout << "Hello World!\n";
-    Square s;
-    Rook r(true);
-    s.piecePointer = &r;
-    cout << r.currentSquare << endl;
-    cout << &s;
+	b = Board();
+	b.board[1][0]->move(1,1);
+	b.board[1][0]->move(2,1);
+		
 }

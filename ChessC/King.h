@@ -2,12 +2,14 @@
 #include "Piece.h"
 #include "Square.h"
 
-class King : Piece
+class King : public Piece
 {
 public:
-	void move(int row, int column);
+	King();
+	King(bool white);
+	bool move(int orow, int ocol, int nrow, int ncol);
 
-private:
+private:/*
 	SquarePtr NW;
 	SquarePtr NE;
 	SquarePtr SW;
@@ -15,6 +17,6 @@ private:
 	SquarePtr north;
 	SquarePtr south;
 	SquarePtr east;
-	SquarePtr west;
+	SquarePtr west;*/
 
 };

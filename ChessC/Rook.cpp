@@ -7,8 +7,8 @@ Rook::Rook(bool white) : Piece(white) {
 	
 }
 
-void Rook::move(int row, int column)
+bool Rook::move(int orow, int ocol, int nrow, int ncol)
 {
-	cout << currentSqaure->getPiece();
+	return true;
 }
 

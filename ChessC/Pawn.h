@@ -3,15 +3,17 @@
 #include "Square.h"
 
 
-class Pawn : Piece
+class Pawn : public Piece
 {
 public:
-	void move(int row, int column);
+	Pawn(bool white);
+	bool move(int orow, int ocol, int nrow, int ncol);
+
 
 private:
-	SquarePtr up;
+	/*SquarePtr up;
 	SquarePtr upLeft;
-	SquarePtr upRight;
+	SquarePtr upRight;*/
 
 };
 

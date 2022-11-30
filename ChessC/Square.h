@@ -4,19 +4,19 @@
 
 typedef Piece* PiecePtr;
 
-
 class Square
 {
 public:
 	Square();
-	Square(PiecePtr next);
+	Square(PiecePtr piece);
 	PiecePtr getPiece();
-	PiecePtr piecePointer;
+	PiecePtr piece = nullptr;
+	void move(int nrow, int ncol);
 
 private:
-	/*int row;
-	int col;*/
-
+	int row;
+	int col;
+	int color;
 
 };
 

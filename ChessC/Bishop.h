@@ -2,17 +2,18 @@
 #include "Piece.h"
 #include "Square.h"
 
-
-class Bishop : Piece
+class Bishop : public Piece
 {
 public:
-	void move(int row, int column);
+	Bishop();
+	Bishop(bool white);
+	bool move(int orow, int ocol, int nrow, int ncol);
 
-private:
-	SqaurePtr NW;
-	SqaurePtr NE;
-	SqaurePtr SW;
-	SqaurePtr SE;
+private:/*
+	SquarePtr NW;
+	SquarePtr NE;
+	SquarePtr SW;
+	SquarePtr SE;*/
 
 };
 

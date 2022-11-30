@@ -5,9 +5,10 @@
 
 class Board
 {
+public:
+	Board();
+	Square* board[8][8];
 private:
-	Square Board[8][8];
-	//n-generate el board b2a
 
 
 };
