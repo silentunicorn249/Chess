@@ -7,13 +7,11 @@
 #include "Rook.h"
 #include "gBoard.h"
 
-Board b;
-
 using namespace std;
+Board b;
 
 int main()
 {
-	b = Board();
 	b.board[1][0]->move(1,1);
 	b.board[1][0]->move(2,1);
 		

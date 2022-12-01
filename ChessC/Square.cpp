@@ -2,8 +2,16 @@
 #include <iostream>
 
 using namespace std;
+Square::Square()
+{
+}
 
-PiecePtr Square::getPiece()
+Square::Square(Piece* piece)
+{
+	this->piece = piece;
+}
+
+Piece* Square::getPiece()
 {
 	return piece;
 
@@ -11,20 +19,16 @@ PiecePtr Square::getPiece()
 
 void Square::move(int nrow, int ncol)
 {
-	if (piece->move(row, col, nrow, ncol)) {
-		cout << "moving" << endl; //nbdl pointers
-	}
-	else {
-		cout << "cannot move" << endl;
+	if (nrow < 8 && ncol < 8)
+	{
+		if (piece->move(row, col, nrow, ncol)) {
+			cout << "moving" << endl; //nbdl pointers
+		}
+		else {
+			cout << "cannot move" << endl;
+		}
 	}
 }
 
-Square::Square()
-{
-}
 
-Square::Square(PiecePtr piece)
-{
-	this->piece = piece;
-}
 

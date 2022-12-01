@@ -1,6 +1,6 @@
 #include <iostream>
 #include "List.h"
-
+ 
 using namespace std;
 
 List::List() : mySize(0), first(0) {}

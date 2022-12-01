@@ -1,16 +1,19 @@
 #pragma once
-#include <bitset>
-
 class Piece
 {
 public:
-	template <int> class bitset;
-	Piece(bool white);
+	Piece(bool white, bool motion, bool attack);
 	virtual bool move(int orow, int ocol, int nrow, int ncol) = 0;
+	bool isMoved();
+	bool isAttack();
 	bool isWhite();
+
 
 protected:
 	bool white;
+	bool motion; //this should be changed in the children classes to true if the move function returns true
+	bool attack;//this should be changed in the children classes to true if the move function causes an attack
+
 	//todo: clean code
 	const int NONE = 0;
 	const int KING = 1;
@@ -27,5 +30,3 @@ protected:
 private:
 
 };
-
-

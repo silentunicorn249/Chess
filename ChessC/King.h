@@ -2,11 +2,12 @@
 #include "Piece.h"
 #include "Square.h"
 
+
 class King : public Piece
 {
 public:
 	King();
-	King(bool white);
+	King(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);
 
 private:/*

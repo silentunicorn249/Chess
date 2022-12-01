@@ -6,7 +6,7 @@
 class Board
 {
 public:
-	Board();
+	Board(); 
 	Square* board[8][8];
 private:
 

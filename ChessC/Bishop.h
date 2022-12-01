@@ -6,7 +6,7 @@ class Bishop : public Piece
 {
 public:
 	Bishop();
-	Bishop(bool white);
+	Bishop(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);
 
 private:/*
