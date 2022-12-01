@@ -8,15 +8,14 @@ class Square
 {
 public:
 	Square();
-	Square(PiecePtr piece);
+	Square(int row,int col,PiecePtr piece);
 	PiecePtr getPiece();
 	PiecePtr piece = nullptr;
 	void move(int nrow, int ncol);
-
 private:
+	void Exchange(Square* oldptr, Square* newptr);
 	int row;
 	int col;
-	int color;
 
 };
 

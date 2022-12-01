@@ -12,7 +12,7 @@ Board b;
 
 int main()
 {
-	b.board[1][0]->move(1,1);
-	b.board[1][0]->move(2,1);
+	b.board[1][0]->move(3,0);
+	b.board[1][0]->move(3, 0);
 		
 }

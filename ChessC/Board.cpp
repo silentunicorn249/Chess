@@ -31,14 +31,14 @@ Board::Board()
 		new Rook(1,0,0)
 	};
 	for (int i = 0; i < 8; i++) {
-		board[0][i] = new Square(b[i]);
-		board[1][i] = new Square(new Pawn(0,0,0));
-		board[7][i] = new Square(w[i]);
-		board[7][i] = new Square(new Pawn(1,0,0));
+		board[0][i] = new Square(0,i,b[i]);
+		board[1][i] = new Square(1,i,new Pawn(0,0,0));
+		board[7][i] = new Square(7,i,w[i]);
+		board[7][i] = new Square(7,i,new Pawn(1,0,0));
 	}
 	for (int i = 2; i < 6; i++) {
 		for (int j = 0; j < 8; j++) {
-			board[i][j] = new Square();
+			board[i][j] = new Square(i,j,nullptr);
 		}
 	}
 
