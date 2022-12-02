@@ -48,6 +48,8 @@ int main()
 	b.board[6][3]->move(5, 3);
 	b.board[7][2]->move(2, 7);
 
+	b.board[0][6]->move(2, 7);
+
 	b.display();
 
 

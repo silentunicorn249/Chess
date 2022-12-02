@@ -21,15 +21,18 @@ bool Knight::move(int orow, int ocol, int nrow, int ncol)
 	Square* s = b.board[nrow][ncol];
 	Piece* p = s->piece;
 
+	if (!(p == nullptr)) {
+		if (p->isWhite() == isWhite()) {
+			return false;
+		}
+	}
+
 	/*L-shaped move that requires 3 moves and no adjacent checks needed here since it jumpps*/
-	if (p == nullptr && (diffrow + diffcol == 3) && (diffrow != 0) && (diffcol != 0))
+	if ((diffrow + diffcol == 3) && (diffrow != 0) && (diffcol != 0))
 	{
 		return true;
 	}
 
-	if (p->isWhite() == isWhite()) {
-		return false;
-	}
 	/*else is attack*/
 	return false;
 }
