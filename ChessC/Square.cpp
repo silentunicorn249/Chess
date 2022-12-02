@@ -24,10 +24,15 @@ void Square::move(int nrow, int ncol)
 {
 	if (piece!=nullptr)
 	{
-		if (nrow < 8 && ncol < 8)
+		if (nrow < 8 && ncol < 8) //tetshal fel GUI
 		{
+			if (nrow == row && ncol == col) {
+				cout << "Moving in same place" << endl;
+				return;
+			}
 			if (piece->move(row, col, nrow, ncol)) {
 				piece->setMove(true);
+				//cout << b.board[row][col]->getPiece()->getName();
 				Exchange(b.board[row][col], b.board[nrow][ncol]);
 				cout << "moving" << endl;
 			}
@@ -40,6 +45,11 @@ void Square::move(int nrow, int ncol)
 	{
 		cout << "cannot move an empty square" << endl;
 	}
+}
+
+void Square::display(ostream& out)
+{
+	cout << this->getPiece()->getName();
 }
 
 void Square::Exchange(Square* oldptr, Square* newptr)

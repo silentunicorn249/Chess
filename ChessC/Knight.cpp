@@ -4,6 +4,11 @@
 
 using namespace std;
 
+char Knight::getName()
+{
+	return 'N';
+}
+
 Knight::Knight(bool white, bool motion, bool attack) : Piece(white, motion, attack) {
 
 }

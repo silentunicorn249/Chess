@@ -4,6 +4,11 @@
 
 using namespace std;
 
+char King::getName()
+{
+	return 'K';
+}
+
 King::King(bool white, bool motion, bool attack) : Piece(white, motion, attack) {
 
 }

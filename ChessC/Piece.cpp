@@ -1,5 +1,10 @@
 #include "Piece.h"
 
+char Piece::getName()
+{
+	return 0;
+}
+
 Piece::Piece(bool white = true, bool motion = false,bool attack =false)
 {
 

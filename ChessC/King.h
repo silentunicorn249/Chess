@@ -6,6 +6,7 @@
 class King : public Piece
 {
 public:
+	char getName();
 	King();
 	King(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);

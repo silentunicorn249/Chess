@@ -4,6 +4,11 @@
 
 using namespace std;
 
+char Queen::getName()
+{
+	return 'Q';
+}
+
 Queen::Queen(bool white,bool motion, bool attack) : Piece(white, motion, attack){
 
 }

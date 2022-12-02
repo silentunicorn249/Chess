@@ -2,6 +2,7 @@
 class Piece
 {
 public:
+	virtual char getName();
 	Piece(bool white, bool motion,bool attack);
 	virtual bool move(int orow, int ocol, int nrow, int ncol) = 0;
 	bool isMoved();
