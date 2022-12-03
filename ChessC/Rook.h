@@ -16,6 +16,6 @@ private:/*
 	SquarePtr south;
 	SquarePtr east;
 	SquarePtr west;*/
-	
+	vector <Square*> avMoves;
 
 };

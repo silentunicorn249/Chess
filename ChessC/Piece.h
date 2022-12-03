@@ -1,16 +1,17 @@
 #pragma once
 #include <vector>
+
 class Piece
 {
 public:
 	virtual char getName();
-	Piece(bool white, bool motion,bool attack);
+	Piece(bool white, bool motion, bool attack);
 	virtual bool move(int orow, int ocol, int nrow, int ncol) = 0;
 	bool isMoved();
 	void setMove(bool motion);
 	bool isAttack();
 	bool isWhite();
-	virtual void getAllMoves(int row, int col);
+	/*virtual void getAllMoves(int row, int col);*/
 
 protected:
 	bool white;
@@ -27,9 +28,7 @@ protected:
 
 	const int WHITE = 8;
 	const int BLACK = 16;
-	vector<Square*> avMoves;
-
-private:
 	
 
+private:
 };

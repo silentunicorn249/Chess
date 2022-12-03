@@ -91,7 +91,7 @@ void Rook::getAllMoves(int row, int col) {
 	Square* ptr;
 	avMoves.clear();
 	cout << row << " " << col << " " << avMoves.size();
-	int n, s, e, w = 0;
+	/*int n, s, e, w = 0;*/
 	for (int i = col + 1; i < 8; i++) {
 		ptr = b.board[row][i];
 		if (!(ptr->getPiece())) {
