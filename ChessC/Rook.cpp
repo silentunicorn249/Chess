@@ -79,7 +79,7 @@ bool Rook::move(int orow, int ocol, int nrow, int ncol)
 	Square* ptr;
 	for (int i = 0; i < avMoves.size(); i++) {
 		ptr = avMoves[i];
-		if (ptr-> col == ncol && ptr->row == nrow) {
+		if ((ptr->getCol() == ncol) && ptr->getRow() == nrow) {
 			return true;
 		}
 	}return false;
