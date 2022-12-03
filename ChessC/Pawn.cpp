@@ -31,41 +31,47 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 
 }
 
-void Pawn:: getAllMoves(int row, int col) {
+void Pawn::getAllMoves(int row, int col) {
 	Square* ptr;
 	avMoves.clear();
 	cout << row << " " << col << " " << avMoves.size();
-	int direction=1;
+	int direction = 1;
 	if (isWhite()) {
 		direction = -1;
 	}
-	
-		ptr = b.board[row + (direction * 1)][col];
-		if (!(ptr->getPiece())) { //normal condition
-			cout << "Pawn moved one sqaure" << endl;
-			avMoves.push_back(ptr);
-			if (!isMoved()) {  //first move condition
-				ptr = b.board[row + (direction * 2)][col];
-				if (!(ptr->getPiece())) {
-					cout << "Pawn moved two sqaures" << endl;
-					avMoves.push_back(ptr);
-				}
 
+	ptr = b.board[row + (direction * 1)][col];
+	if (!(ptr->getPiece())) { //normal condition
+		cout << "Pawn moved one sqaure" << endl;
+		avMoves.push_back(ptr);
+		if (!isMoved()) {  //first move condition
+			ptr = b.board[row + (direction * 2)][col];
+			if (!(ptr->getPiece())) {
+				cout << "Pawn moved two sqaures" << endl;
+				avMoves.push_back(ptr);
 			}
-		}
 
-			ptr = b.board[(row + (direction * 1))][(col + 1)];
-			if (isWhite() != ptr->getPiece()->isWhite()) { //attacking condition 
+		}
+	}
+	if (col < 7) {
+		ptr = b.board[(row + (direction * 1))][(col + 1)];
+		if (ptr->getPiece()) {
+			if (isWhite() != ptr->getPiece()->isWhite()) { //attacking right condition 
 				avMoves.push_back(ptr);
 				cout << "Pawn attacked right" << endl;
 			}
-			ptr = ptr = b.board[(row + direction * 1)][ (col - 1)];
-			if (isWhite() != ptr->getPiece()->isWhite()) { //attacking condition 
+		}
+	}
+	if (col > 0) {
+		ptr = b.board[(row + direction * 1)][(col - 1)];
+		if (ptr->getPiece()) {
+			if (isWhite() != ptr->getPiece()->isWhite()) { //attacking left condition 
 				avMoves.push_back(ptr);
 				cout << "Pawn attacked left" << endl;
 			}
 		}
-	
+	}
+}
 	
 
 
