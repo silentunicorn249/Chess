@@ -26,11 +26,14 @@ bool King::move(int orow, int ocol, int nrow, int ncol)
 	}
 	/*equal 2 -->diagonal move*/
 	/*equal one --> linear move in either direction*/
-	if (p==nullptr && (diffrow + diffcol) <= 2)
-		return true;
-	if (p->isWhite() == isWhite()) {
-		return false;
+	if (!(p == nullptr)) {
+		if (p->isWhite() == isWhite()) {
+			return false;
+		}
 	}
+	if ( (diffrow + diffcol) <= 2)
+		return true;
+	
 	return false;
 }
 
