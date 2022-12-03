@@ -5,7 +5,7 @@ char Piece::getName()
 	return 0;
 }
 
-Piece::Piece(bool white = true, bool motion = false,bool attack =false)
+Piece::Piece(bool white = true, bool motion = false, bool attack = false)
 {
 
 	this->white = white;
@@ -34,4 +34,7 @@ bool Piece::isWhite()
 {
 	return white;
 }
+
+
+
 

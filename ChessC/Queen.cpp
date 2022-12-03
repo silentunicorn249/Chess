@@ -9,13 +9,24 @@ char Queen::getName()
 	return 'Q';
 }
 
-Queen::Queen(bool white,bool motion, bool attack) : Piece(white, motion, attack){
+Queen::Queen(bool white, bool motion, bool attack) : Piece(white, motion, attack) {
 
 }
 
 bool Queen::move(int orow, int ocol, int nrow, int ncol)
 {
-	int diffrow = abs(nrow - orow);
+	getAllMoves(orow, ocol);
+	//	cout << endl << avMoves.size() << endl << endl;
+
+	Square* ptr;
+	/*check if any of the available moves corresponds the new value*/
+	for (int i = 0; i < avMoves.size(); i++) {
+		ptr = avMoves[i];
+		if (ptr->getCol() == ncol && ptr->getRow() == nrow) {
+			return true;
+		}
+	}return false;
+	/*int diffrow = abs(nrow - orow);
 	int diffcol = abs(ncol - ocol);
 	int temp;
 	Square* ptr;
@@ -101,6 +112,124 @@ bool Queen::move(int orow, int ocol, int nrow, int ncol)
 
 		return true;
 	}
-	return false;
+	return false;*/
 
+}
+
+void Queen::getAllMoves(int row, int col)
+{
+	avMoves.clear();
+	Square* s = b.board[row][col];
+	Piece* p = s->getPiece();
+	Square* ptr;/*iterator*/
+	/*SE*/
+	for (int i = 1; row + i < 8 && col + i < 8; i++)
+	{
+		ptr = b.board[row + i][col + i];
+		if (!(ptr->getPiece()))
+			avMoves.push_back(ptr);
+		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
+		{
+			avMoves.push_back(ptr);
+			break;
+		}
+	}
+	/*NE*/
+	for (int i = 1; col + i < 8 && row - i >= 0; i++)
+	{
+		ptr = b.board[row - i][col + i];
+		if (!(ptr->getPiece()))
+			avMoves.push_back(ptr);
+		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
+		{
+			avMoves.push_back(ptr);
+			break;
+		}
+	}
+	/*SW*/
+	for (int i = 1; row + i < 8 && col - i >= 0; i++)
+	{
+		ptr = b.board[row + i][col - i];
+		if (!(ptr->getPiece()))
+			avMoves.push_back(ptr);
+		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
+		{
+			avMoves.push_back(ptr);
+			break;
+		}
+	}
+	/*NW*/
+	for (int i = 1; row - i >= 0 && col - i >= 0; i++)
+	{
+		ptr = b.board[row - i][col - i];
+		if (!(ptr->getPiece()))
+			avMoves.push_back(ptr);
+		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
+		{
+			avMoves.push_back(ptr);
+			break;
+		}
+	}
+	/*------------------------------------EAST-------------------------------------*/
+	for (int i = col + 1; i < 8; i++) {
+		ptr = b.board[row][i];
+		if (!(ptr->getPiece())) {
+			cout << "right" << endl;
+			avMoves.push_back(ptr);
+		}
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite()) {
+				avMoves.push_back(ptr);
+			}
+			break;
+		}
+	}
+	/*------------------------------------WEST-------------------------------------*/
+	for (int i = col - 1; i >= 0; i--) {
+		ptr = b.board[row][i];
+		if (!(ptr->getPiece())) {
+			cout << "left" << endl;
+			avMoves.push_back(ptr);
+		}
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite()) {
+				avMoves.push_back(ptr);
+			}
+			break;
+		}
+	}
+	/*------------------------------------SOUTH-------------------------------------*/
+	for (int i = row + 1; i < 8; i++) {
+		ptr = b.board[i][col];
+		if (!(ptr->getPiece())) {
+			cout << "down" << endl;
+			avMoves.push_back(ptr);
+		}
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite()) {
+				avMoves.push_back(ptr);
+			}
+			break;
+		}
+	}
+	/*------------------------------------NORTH-------------------------------------*/
+	for (int i = row - 1; i >= 0; i--) {
+		ptr = b.board[i][col];
+		if (!(ptr->getPiece())) {
+			cout << "up" << endl;
+			avMoves.push_back(ptr);
+		}
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite()) {
+				avMoves.push_back(ptr);
+			}
+			break;
+		}
+	}
+
+}
+
+vector<Square*> Queen::getVec()
+{
+	return avMoves;
 }

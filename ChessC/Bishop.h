@@ -10,11 +10,13 @@ public:
 	Bishop(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);
 
-private:/*
-	SquarePtr NW;
-	SquarePtr NE;
-	SquarePtr SW;
-	SquarePtr SE;*/
+	void getAllMoves(int row, int col);
+	vector<Square*> getVec();
+
+
+private:
+	vector<Square*> avMoves;
+
 
 };
 

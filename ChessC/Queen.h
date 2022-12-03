@@ -9,16 +9,11 @@ public:
 	char getName();
 	Queen(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);
+	void getAllMoves(int row, int col);
+	vector<Square*> getVec();
 
-private:/*
-	SquarePtr NW;
-	SquarePtr NE;
-	SquarePtr SW;
-	SquarePtr SE;
-	SquarePtr north;
-	SquarePtr south;
-	SquarePtr east;
-	SquarePtr west;*/
+private:
+	vector<Square*> avMoves;
 
 };
 

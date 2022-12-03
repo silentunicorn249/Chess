@@ -1,3 +1,4 @@
+
 #pragma once
 #include "Piece.h"
 #include "Square.h"
@@ -7,17 +8,11 @@ class Knight : public Piece
 public:
 	char getName();
 	Knight();
-	Knight(bool white,bool motion, bool attack);
+	Knight(bool white, bool motion, bool attack);
 	bool move(int orow, int ocol, int nrow, int ncol);
+	void getAllMoves(int row, int col);
+	vector<Square*> getVec();
 
-private:/*
-	SquarePtr UUR;
-	SquarePtr UUL;
-	SquarePtr UL;
-	SquarePtr UR;
-	SquarePtr DDR;
-	SquarePtr DDL;
-	SquarePtr DL;
-	SquarePtr DR;*/
-
+private:
+	vector<Square*> avMoves;
 };

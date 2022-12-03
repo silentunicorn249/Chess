@@ -15,25 +15,82 @@ Knight::Knight(bool white, bool motion, bool attack) : Piece(white, motion, atta
 
 bool Knight::move(int orow, int ocol, int nrow, int ncol)
 {
+	getAllMoves(orow, ocol);
 
-	int diffrow = abs(nrow - orow);
-	int diffcol = abs(ncol - ocol);
-	Square* s = b.board[nrow][ncol];
-	Piece* p = s->piece;
-
-	if (!(p == nullptr)) {
-		if (p->isWhite() == isWhite()) {
-			return false;
+	Square* ptr;
+	for (int i = 0; i < avMoves.size(); i++) {
+		ptr = avMoves[i];
+		if ((ptr->getCol() == ncol) && ptr->getRow() == nrow) {
+			return true;
 		}
-	}
+	}return false;
 
-	/*L-shaped move that requires 3 moves and no adjacent checks needed here since it jumpps*/
-	if ((diffrow + diffcol == 3) && (diffrow != 0) && (diffcol != 0))
-	{
-		return true;
-	}
-
-	/*else is attack*/
-	return false;
 }
 
+void Knight::getAllMoves(int row, int col)
+{
+	avMoves.clear();
+	Square* s = b.board[row][col];
+	Piece* p = s->piece;
+	if (row + 2 < 8 && row + 2 >= 0 && col - 1 < 8 && col - 1 >= 0)
+	{
+		s = b.board[row + 2][col - 1];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+	if (row + 1 < 8 && row + 1 >= 0 && col - 2 < 8 && col - 2 >= 0)
+	{
+		s = b.board[row + 1][col - 2];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+	if (row - 1 < 8 && row - 1 >= 0 && col - 2 < 8 && col - 2 >= 0)
+	{
+		s = b.board[row - 1][col - 2];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+	if (row - 2 < 8 && row - 2 >= 0 && col - 1 < 8 && col - 1 >= 0)
+	{
+		s = b.board[row - 2][col - 1];
+		if (s->getPiece() == nullptr || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+	if (row - 2 < 8 && row - 2 >= 0 && col + 1 < 8 && col + 1 >= 0)
+	{
+		s = b.board[row - 2][col + 1];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(b.board[row - 2][col + 1]);
+		}
+	}
+	if (row - 1 < 8 && row - 1 >= 0 && col + 1 < 8 && col + 1 >= 0)
+	{
+		s = b.board[row - 1][col + 2];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+	if (row + 2 < 8 && row + 2 >= 0 && col + 1 < 8 && col + 1 >= 0)
+	{
+		s = b.board[row + 2][col + 1];
+		if ((s->getPiece() == nullptr) || (s->getPiece() != nullptr && p->isWhite() != s->getPiece()->isWhite()))
+		{
+			avMoves.push_back(s);
+		}
+	}
+}
+
+vector<Square*> Knight::getVec()
+{
+	return avMoves;
+}

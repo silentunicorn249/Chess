@@ -1,12 +1,14 @@
 #include "Square.h"
 #include <iostream>
 #include"gBoard.h"
+#include"Players.h"
 using namespace std;
+extern Players p1;
 Square::Square()
 {
 }
 
-Square::Square(int row, int col,  PiecePtr piece)
+Square::Square(int row, int col, PiecePtr piece)
 {
 	this->col = col;
 	this->row = row;
@@ -22,7 +24,7 @@ Piece* Square::getPiece()
 /*check adjacent*/
 void Square::move(int nrow, int ncol)
 {
-	if (piece!=nullptr)
+	if (piece != nullptr && (piece->isWhite()))//!p1.getTurn()))
 	{
 		if (nrow < 8 && ncol < 8) //tetshal fel GUI
 		{
@@ -55,12 +57,12 @@ void Square::display(ostream& out)
 void Square::Exchange(Square* oldptr, Square* newptr)
 {
 	newptr->piece = oldptr->piece;
-	oldptr->piece=nullptr;
+	oldptr->piece = nullptr;
 
 }
 int Square::getCol() {
 	return col;
- }
+}
 
 int Square::getRow() {
 	return row;
