@@ -9,7 +9,7 @@ public:
 	void setMove(bool motion);
 	bool isAttack();
 	bool isWhite();
-
+	virtual void getAllMoves(int row, int col);
 
 protected:
 	bool white;
@@ -26,8 +26,9 @@ protected:
 
 	const int WHITE = 8;
 	const int BLACK = 16;
-
+	vector<Square*> avMoves;
 
 private:
+	
 
 };

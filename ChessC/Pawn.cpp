@@ -45,3 +45,4 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 		return true;
 	}
 }
+
