@@ -58,6 +58,11 @@ void Square::Exchange(Square* oldptr, Square* newptr)
 	oldptr->piece=nullptr;
 
 }
+int Square::getCol() {
+	return col;
+ }
 
-
+int Square::getRow() {
+	return row;
+}
 

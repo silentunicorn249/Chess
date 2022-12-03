@@ -15,6 +15,8 @@ public:
 	PiecePtr piece = nullptr;
 	void move(int nrow, int ncol);
 	void display(ostream& out);
+	int getCol();
+	int getRow();
 private:
 	void Exchange(Square* oldptr, Square* newptr);
 	int row;
