@@ -2,6 +2,7 @@
 #include "Piece.h"
 #include <ostream>
 
+
 using namespace std;
 
 typedef Piece* PiecePtr;

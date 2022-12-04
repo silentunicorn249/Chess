@@ -2,6 +2,7 @@
 #pragma once
 #include "Piece.h"
 #include "Square.h"
+#include <vector>
 
 class Knight : public Piece
 {

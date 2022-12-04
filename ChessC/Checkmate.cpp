@@ -1,4 +1,7 @@
 #include "Checkmate.h"
+#include <iostream>
+using namespace std;
+
 Checkmate::Checkmate() {}
 
 void Checkmate::AllPossibleMoves()
@@ -13,14 +16,22 @@ void Checkmate::AllPossibleMoves()
 			ptr = b.board[i][j];
 			if (ptr->getPiece() != nullptr)
 			{
-				/*if (!(ptr->getPiece()->isWhite()))
+				if (!(ptr->getPiece()->isWhite()))
 					Blackvec.push_back(ptr->getPiece()->getVec());
 				else
-					Whitevec.push_back(ptr->getPiece()->getVec());*/
+					Whitevec.push_back(ptr->getPiece()->getVec());
 			}
 
 		}
 	}
+	for (int i = 0; i < Whitevec.size(); i++) {
+		for(int j =0; j < Whitevec[i].size(); i++){
+			cout << Whitevec[i][j]->getRow() << " " << Whitevec[i][j]->getCol();
+		}
+		cout << endl;
+	}
+
+
 }
 
 vector<vector<Square*>> Checkmate::getBlackvec()

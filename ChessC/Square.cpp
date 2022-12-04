@@ -2,6 +2,8 @@
 #include <iostream>
 #include"gBoard.h"
 #include"Players.h"
+#include "AllPossibleMoves.h"
+
 using namespace std;
 extern Players p1;
 Square::Square()
@@ -24,7 +26,7 @@ Piece* Square::getPiece()
 /*check adjacent*/
 void Square::move(int nrow, int ncol)
 {
-	if (piece != nullptr && (piece->isWhite()))//!p1.getTurn()))
+	if (piece != nullptr)//!p1.getTurn()))
 	{
 		if (nrow < 8 && ncol < 8) //tetshal fel GUI
 		{
@@ -36,6 +38,7 @@ void Square::move(int nrow, int ncol)
 				piece->setMove(true);
 				//cout << b.board[row][col]->getPiece()->getName();
 				Exchange(b.board[row][col], b.board[nrow][ncol]);
+				AllPossibleMoves();
 				cout << "moving" << endl;
 			}
 			else {

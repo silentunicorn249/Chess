@@ -34,7 +34,7 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 void Pawn::getAllMoves(int row, int col) {
 	Square* ptr;
 	avMoves.clear();
-	cout << row << " " << col << " " << avMoves.size();
+	//cout << row << " " << col << " " << avMoves.size();
 	int direction = 1;
 	if (isWhite()) {
 		direction = -1;
@@ -42,12 +42,10 @@ void Pawn::getAllMoves(int row, int col) {
 
 	ptr = b.board[row + (direction * 1)][col];
 	if (!(ptr->getPiece())) { //normal condition
-		cout << "Pawn moved one sqaure" << endl;
 		avMoves.push_back(ptr);
 		if (!isMoved()) {  //first move condition
 			ptr = b.board[row + (direction * 2)][col];
 			if (!(ptr->getPiece())) {
-				cout << "Pawn moved two sqaures" << endl;
 				avMoves.push_back(ptr);
 			}
 
@@ -71,6 +69,11 @@ void Pawn::getAllMoves(int row, int col) {
 			}
 		}
 	}
+}
+
+vector<Square*> Pawn::getVec()
+{
+	return avMoves;
 }
 	
 

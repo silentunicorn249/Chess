@@ -13,7 +13,7 @@ public:
 	bool isWhite();
 
 	virtual void getAllMoves(int row, int col) = 0;
-	//vector<Square*> getVec();
+	virtual std::vector<Square*> getVec() = 0;
 
 
 protected:

@@ -1,6 +1,8 @@
 #pragma once
 #include "Piece.h"
 #include "Square.h"
+#include <vector>
+
 class Rook : public Piece
 {
 public:

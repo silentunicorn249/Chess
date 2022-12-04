@@ -57,6 +57,9 @@
     <ClCompile Include="Checkmate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AllPossibleMoves.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tree.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Checkmate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllPossibleMoves.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

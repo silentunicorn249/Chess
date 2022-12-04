@@ -128,10 +128,13 @@ void Queen::getAllMoves(int row, int col)
 		ptr = b.board[row + i][col + i];
 		if (!(ptr->getPiece()))
 			avMoves.push_back(ptr);
-		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
-		{
-			avMoves.push_back(ptr);
-			break;
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite())
+			{
+				avMoves.push_back(ptr);
+
+			}break;
+
 		}
 	}
 	/*NE*/
@@ -140,10 +143,13 @@ void Queen::getAllMoves(int row, int col)
 		ptr = b.board[row - i][col + i];
 		if (!(ptr->getPiece()))
 			avMoves.push_back(ptr);
-		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
-		{
-			avMoves.push_back(ptr);
-			break;
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite())
+			{
+				avMoves.push_back(ptr);
+
+			}break;
+
 		}
 	}
 	/*SW*/
@@ -152,10 +158,13 @@ void Queen::getAllMoves(int row, int col)
 		ptr = b.board[row + i][col - i];
 		if (!(ptr->getPiece()))
 			avMoves.push_back(ptr);
-		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
-		{
-			avMoves.push_back(ptr);
-			break;
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite())
+			{
+				avMoves.push_back(ptr);
+
+			}break;
+
 		}
 	}
 	/*NW*/
@@ -164,10 +173,13 @@ void Queen::getAllMoves(int row, int col)
 		ptr = b.board[row - i][col - i];
 		if (!(ptr->getPiece()))
 			avMoves.push_back(ptr);
-		else if ((ptr->getPiece() && p->isWhite() != ptr->getPiece()->isWhite()))
-		{
-			avMoves.push_back(ptr);
-			break;
+		else {
+			if (isWhite() != ptr->getPiece()->isWhite())
+			{
+				avMoves.push_back(ptr);
+
+			}break;
+
 		}
 	}
 	/*------------------------------------EAST-------------------------------------*/
