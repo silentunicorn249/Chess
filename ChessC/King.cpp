@@ -62,6 +62,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -75,6 +77,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -88,6 +92,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -101,6 +107,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -114,6 +122,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -127,6 +137,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -140,6 +152,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}
@@ -153,6 +167,8 @@ void King::getAllMoves(int row, int col)
 		}
 		else if ((s->getPiece() && p->isWhite() != s->getPiece()->isWhite()))
 		{
+			if (s->getPiece()->getName() == 'K')
+				attack = true;
 			avMoves.push_back(s);
 
 		}

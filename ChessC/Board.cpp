@@ -46,6 +46,48 @@ Board::Board()
 	}
 
 }
+//Board copy constructor  
+Board::Board(const Board& oBoard) {
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			Piece* p = nullptr;
+			Piece* np = oBoard.board[i][j]->getPiece();
+			if (np == nullptr) {
+				//cout << "Creating empty square" << endl;
+				board[i][j] = new Square(i, j, nullptr);
+				continue;
+			}
+			if (np->getName() == 'R') {
+				//cout << "Creating Rook" << endl;
+				p = new Rook(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			else if (np->getName() == 'N') {
+				//cout << "Creating Knight" << endl;
+				p = new Knight(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			else if (np->getName() == 'B') {
+				//cout << "Creating Bishop" << endl;
+				p = new Bishop(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			else if (np->getName() == 'Q') {
+				//cout << "Creating Queen" << endl;
+				p = new Queen(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			else if (np->getName() == 'K') {
+				//cout << "Creating King" << endl;
+				p = new King(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			else if (np->getName() == 'P') {
+				//cout << "Creating Pawn" << endl;
+				p = new Pawn(np->isWhite(), np->isMoved(), np->isAttack());
+			}
+			//cout << "Assigning piece" << endl;
+			Square* s = new Square(i, j, p);
+			this->board[i][j] = s;
+
+		}
+	}
+}
 
 void Board::display()
 {

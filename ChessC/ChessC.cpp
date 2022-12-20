@@ -7,12 +7,42 @@
 #include "Rook.h"
 #include "gBoard.h"
 #include "AllPossibleMoves.h"
+#include "gPossible.h"
+#include "Check.h"
 
 using namespace std;
 Board b = Board();
-
+vector<vector<Square*>> Blackvec;
+vector<vector<Square*>> Whitevec;
+vector<Square*>WhiteAttackerMoves;
+vector<Square*>BlackAttackerMoves;
+vector<Square*>WhiteKingMoves;
+vector<Square*>BlackKingMoves;
+vector<Square*>PossibleSolutions;
+Square* BlackAttackerLoc;
+Square* BlackKingLoc;
+Square* WhiteAttackerLoc;
+Square* WhiteKingLoc;
+int CountWhiteAttack;
+int CountBlackAttack;
 int main()
 {
+	b.board[6][4]->move(4, 4);
+	b.board[7][4]->move(6, 4);
+	b.board[6][4]->move(5, 4);
+	b.board[1][2]->move(3, 2);
+	b.board[0][3]->move(2, 1);
+	b.board[1][6]->move(3, 6);
+	b.board[0][5]->move(2, 7);
+	b.board[2][2]->move(3, 2);
+	b.board[3][2]->move(4, 2);
+	b.board[3][6]->move(4, 6);
+	b.board[7][5]->move(6, 4);
+	b.board[1][3]->move(3, 3);
+	checkWhite();
+	cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
+	//b.board[4][0]->move(5, 0);
+	//b.board[6][1]->move(5, 0);
 	//cout << b.board[0][0]->getPiece()->getName();
 	/*b.display();
 
@@ -55,7 +85,7 @@ int main()
 	//b.board[7][2]->move(5,4);
 	//AllPossibleMoves();
 	//b.board[7][1]->move(5, 2);
-	AllPossibleMoves();
+	//AllPossibleMoves();
 
 	//b.board[0][1]->move(2, 0);
 	b.display();

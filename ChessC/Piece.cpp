@@ -25,7 +25,7 @@ void Piece::setMove(bool motion)
 
 bool Piece::isAttack()
 {
-	return false;
+	return attack;
 }
 
 

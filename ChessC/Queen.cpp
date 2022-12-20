@@ -131,6 +131,8 @@ void Queen::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -146,6 +148,8 @@ void Queen::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -161,6 +165,8 @@ void Queen::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -176,6 +182,8 @@ void Queen::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -191,6 +199,8 @@ void Queen::getAllMoves(int row, int col)
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -205,6 +215,8 @@ void Queen::getAllMoves(int row, int col)
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -219,6 +231,8 @@ void Queen::getAllMoves(int row, int col)
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -233,6 +247,8 @@ void Queen::getAllMoves(int row, int col)
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;

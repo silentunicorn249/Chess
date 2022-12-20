@@ -94,6 +94,8 @@ void Bishop::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -111,12 +113,14 @@ void Bishop::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
-				
+
 			}break;
 
 		}
-			
+
 	}
 	/*SW*/
 	for (int i = 1; row + i < 8 && col - i >= 0; i++)
@@ -127,6 +131,8 @@ void Bishop::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;
@@ -142,6 +148,8 @@ void Bishop::getAllMoves(int row, int col)
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite())
 			{
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 
 			}break;

@@ -4,11 +4,9 @@
 #include"gBoard.h"
 #include"Board.h"
 #include <iostream>
+#include "gPossible.h"
 
 using namespace std;
-
-vector<vector<Square*>> Blackvec;
-vector<vector<Square*>> Whitevec;
 
 void AllPossibleMoves()
 {
@@ -39,14 +37,16 @@ void AllPossibleMoves()
 
 		}
 	}
-	cout << Whitevec.size() << endl;
-	for (int i = 0; i < Whitevec.size(); i++) {
-		for (int j = 0; j < Whitevec[i].size(); j++) {
-			cout << Whitevec[i][j]->getRow() << ", " << Whitevec[i][j]->getCol() << endl;
+	cout << Blackvec.size() << endl;
+	for (int i = 0; i < Blackvec.size(); i++) {
+		for (int j = 0; j < Blackvec[i].size(); j++) {
+			cout << Blackvec[i][j]->getRow() << ", " << Blackvec[i][j]->getCol() << endl;
+			
 		}
-		cout << "ended piece" << endl;
+		
+		cout << "ended piece " <<endl;
 	}
-
+	
 
 }
 

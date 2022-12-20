@@ -9,8 +9,8 @@ char Rook::getName()
 	return 'R';
 }
 
-Rook::Rook(bool white , bool motion, bool attack) : Piece(white, motion, attack){
-	
+Rook::Rook(bool white, bool motion, bool attack) : Piece(white, motion, attack) {
+
 }
 
 bool Rook::move(int orow, int ocol, int nrow, int ncol)
@@ -32,7 +32,6 @@ bool Rook::move(int orow, int ocol, int nrow, int ncol)
 void Rook::getAllMoves(int row, int col) {
 	Square* ptr;
 	avMoves.clear();
-	/*int n, s, e, w = 0;*/
 	for (int i = col + 1; i < 8; i++) {
 		ptr = b.board[row][i];
 		if (!(ptr->getPiece())) {
@@ -41,6 +40,8 @@ void Rook::getAllMoves(int row, int col) {
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -53,6 +54,8 @@ void Rook::getAllMoves(int row, int col) {
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -65,6 +68,8 @@ void Rook::getAllMoves(int row, int col) {
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;
@@ -77,6 +82,8 @@ void Rook::getAllMoves(int row, int col) {
 		}
 		else {
 			if (isWhite() != ptr->getPiece()->isWhite()) {
+				if (ptr->getPiece()->getName() == 'K')
+					attack = true;
 				avMoves.push_back(ptr);
 			}
 			break;

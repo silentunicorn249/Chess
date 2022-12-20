@@ -1,11 +1,8 @@
 #include "Square.h"
 #include <iostream>
 #include"gBoard.h"
-#include"Players.h"
 #include "AllPossibleMoves.h"
-
 using namespace std;
-extern Players p1;
 Square::Square()
 {
 }
@@ -36,9 +33,13 @@ void Square::move(int nrow, int ncol)
 			}
 			if (piece->move(row, col, nrow, ncol)) {
 				piece->setMove(true);
+
 				//cout << b.board[row][col]->getPiece()->getName();
+				// save state into b2
 				Exchange(b.board[row][col], b.board[nrow][ncol]);
 				AllPossibleMoves();
+				
+				// if (check()) return to original state
 				cout << "moving" << endl;
 			}
 			else {
