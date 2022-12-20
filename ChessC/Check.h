@@ -7,6 +7,8 @@
 	bool checkBlack();
 	bool CheckMateWhite();
 	void WhiteKingIter();
+	void SortVec();
+	bool compareSquare(Square* s1, Square* s2);
 	bool ChangeBoardState(Board &oldBoard,int row,int col);
 	//vector<vector<Square*>> getBlackvec();
 	//vector<vector<Square*>> getWhitevec();

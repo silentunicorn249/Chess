@@ -3,6 +3,8 @@
 #include <vector>
 #include "gPossible.h"
 #include"gBoard.h"
+#include <algorithm>
+#include <iterator>
 using namespace std;
 
 /*void Checkmate::AllPossibleMoves()
@@ -118,6 +120,7 @@ bool CheckMateWhite()
 		WhiteKingIter();
 		if (PossibleSolutions.size() == 0)
 			return true;
+		///////////////////Check for Backtrack
 		else return false;
 	}
 	else if (CountBlackAttack == 1)
@@ -171,19 +174,39 @@ bool ChangeBoardState(Board& oldBoard,int row, int col)
 
 void WhiteKingIter() 
 {
+	
+	//SortVec();
+
 	for (int i = 0; i < WhiteKingMoves.size(); i++)
 	{
+		bool found = false;
 		for (int j = 0; j < Blackvec.size(); j++)
 		{
-			for (int k = 0; k < Blackvec[k].size(); k++)
+			for (int k = 0; k < Blackvec[j].size(); k++)
 			{
-				if (!((WhiteKingMoves[i]->getRow() == Blackvec[j][k]->getRow()) &&
-					(WhiteKingMoves[i]->getCol() == Blackvec[j][k]->getCol())))
-				{
-					PossibleSolutions.push_back(WhiteKingMoves[i]);
-
-				}
+				if (WhiteKingMoves[i]->getRow() == Blackvec[j][k]->getRow() 
+					&& (WhiteKingMoves[i]->getCol() == Blackvec[j][k]->getCol()))
+					found = true;
+			
 			}
 		}
+		if (!found)
+		{
+			PossibleSolutions.push_back(WhiteKingMoves[i]);
+		}
 	}
+	
+}
+
+void SortVec()
+{
+	sort(WhiteKingMoves.begin(), WhiteKingMoves.end(),compareSquare);
+	for(int i =0; i < Blackvec.size(); i++)
+	sort(Blackvec[i].begin(), Blackvec[i].end(), compareSquare);
+	
+}
+
+bool compareSquare(Square* s1, Square* s2)
+{
+	return (s1->getRow() < s2->getRow());
 }
