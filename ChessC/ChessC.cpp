@@ -31,15 +31,35 @@ int main()
 	//b.board[2][1]->move(4, 3);
 	//b.board[1][4]->move(3, 4);
 
-	
-	b.board[6][6]->move(4, 6);
+	//Fool's mate
+	/*b.board[6][6]->move(4, 6);
 	b.board[6][5]->move(4, 5);
 	b.board[1][4]->move(3, 4);
 	b.board[0][3]->move(4, 7);
-	b.board[7][6]->move(5, 5);
+	b.board[7][6]->move(5, 5);*/
 
-	checkWhite();
-	cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
+	//Rook bishop scenario
+	b.board[6][4]->move(4, 4);
+	b.board[7][4]->move(6, 4);
+	b.board[6][4]->move(5, 4);
+	b.board[1][0]->move(3, 0);
+	b.board[0][0]->move(2, 0);
+	b.board[2][0]->move(2, 2);
+	b.board[2][2]->move(5, 2);
+	b.board[5][2]->move(5, 3);
+	b.board[7][5]->move(6, 4);
+	b.board[1][3]->move(2, 3);
+	b.board[0][2]->move(2, 4);
+	b.board[2][4]->move(4, 2);
+	b.board[6][5]->move(4, 5);
+	b.board[7][6]->move(5, 5);
+	b.board[7][3]->move(7, 5);
+	b.board[7][5]->move(6, 5);
+
+
+
+	//checkWhite();
+	//cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
 	//b.board[4][0]->move(5, 0);
 	//b.board[6][1]->move(5, 0);
 	//cout << b.board[0][0]->getPiece()->getName();
@@ -87,6 +107,7 @@ int main()
 	//AllPossibleMoves();
 
 	//b.board[0][1]->move(2, 0);
+	Board b2 = Board(b);
 	b.display();
 
 

@@ -83,20 +83,8 @@ Board::Board(const Board& oBoard) {
 			}
 			vector<Square*> temp = np->getVec();
 			p->setVec(temp);
-			Blackvec = oBoard.Blackvec;
-			Whitevec = oBoard.Whitevec;
-			WhiteAttackerMoves = oBoard.WhiteAttackerMoves;
-			BlackAttackerMoves = oBoard.BlackAttackerMoves;
-			WhiteKingMoves = oBoard.WhiteKingMoves;
-			BlackKingMoves = oBoard.BlackKingMoves;
-			PossibleSolutions = oBoard.PossibleSolutions;
-			kingPossibleSolutions = oBoard.kingPossibleSolutions;
-			BlackAttackerLoc = oBoard.BlackAttackerLoc;
-			BlackKingLoc = oBoard.BlackKingLoc;
-			WhiteAttackerLoc = oBoard.WhiteAttackerLoc;
-			WhiteKingLoc = oBoard.WhiteKingLoc;
-			CountBlackAttack = oBoard.CountBlackAttack;
-			CountWhiteAttack = oBoard.CountWhiteAttack;
+			
+
 
 			//cout << "Assigning piece" << endl;
 			Square* s = new Square(i, j, p);
@@ -104,6 +92,79 @@ Board::Board(const Board& oBoard) {
 
 		}
 	}
+	copy2D(oBoard.Blackvec, Blackvec);
+	copy2D(oBoard.Whitevec, Whitevec);
+	copy1D(oBoard.WhiteAttackerMoves, WhiteAttackerMoves);
+	copy1D(oBoard.BlackAttackerMoves, BlackAttackerMoves);
+	copy1D(oBoard.WhiteKingMoves, WhiteKingMoves);
+	copy1D(oBoard.BlackKingMoves, BlackKingMoves);
+	copy1D(oBoard.PossibleSolutions, PossibleSolutions);
+	copy1D(oBoard.kingPossibleSolutions, kingPossibleSolutions);
+	copySquare(oBoard.BlackAttackerLoc, BlackAttackerLoc);
+	copySquare(oBoard.BlackKingLoc, BlackKingLoc);
+	copySquare(oBoard.WhiteAttackerLoc, WhiteAttackerLoc);
+	copySquare(oBoard.WhiteKingLoc, WhiteKingLoc);
+	CountBlackAttack = oBoard.CountBlackAttack;
+	CountWhiteAttack = oBoard.CountWhiteAttack;
+}
+
+void Board::copy2D(vector<vector<Square*>> orig, vector<vector<Square*>>& copy) {
+	cout << "called" << endl;
+	for (int i = 0; i < orig.size(); i++) {
+		vector<Square*> temp;
+		for (int j = 0; j < orig[i].size(); j++) {
+			//cout << "WESL HENA YA TEEEEET" << endl;
+			int row = orig[i][j]->getRow();
+			int col = orig[i][j]->getCol();
+
+			Piece* np = orig[i][j]->getPiece();
+			if (np == nullptr) {
+				//cout << "Creating empty square" << endl;
+				Square* sInside = new Square(row, col, nullptr);
+				temp.push_back (sInside);
+				continue;
+			}
+			Square* s = new Square(row, col, np);
+			temp.push_back(s);
+		}
+		copy.push_back(temp);
+
+	}
+}
+
+void Board::copy1D(vector<Square*> orig, vector<Square*>& copy) {
+	for (int i = 0; i < orig.size(); i++) {
+			int row = orig[i]->getRow();
+			int col = orig[i]->getCol();
+			Piece* np = orig[i]->getPiece();
+			if (np == nullptr) {
+				//cout << "Creating empty square" << endl;
+				Square* sInside = new Square(row, col, nullptr);
+				copy.push_back(sInside);
+				continue;
+			}
+			Square* s = new Square(row, col, np);
+			copy.push_back(s);
+	}
+}
+
+void Board::copySquare(Square* orig, Square*& copy) {
+	if (orig == nullptr)
+	{
+		copy = nullptr;
+		return;
+	}
+	int row = orig->getRow();
+	int col = orig->getCol();
+	Piece* np = orig->getPiece();
+	if (np == nullptr) {
+		//cout << "Creating empty square" << endl;
+		Square* sInside = new Square(row, col, nullptr);
+		copy = sInside;
+		return;
+	}
+	Square* s = new Square(row, col, np);
+	copy = s;
 }
 
 void Board::display()
