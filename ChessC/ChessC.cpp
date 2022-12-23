@@ -16,22 +16,27 @@ Board b = Board();
 int main()
 {
 	//Checkmate Scenario
-	b.board[6][4]->move(4, 4);
-	b.board[7][4]->move(6, 4);
-	b.board[6][4]->move(5, 4);
-	b.board[1][2]->move(3, 2);
-	//b.board[0][3]->move(2, 1);	
-	b.board[1][6]->move(3, 6);
-	b.board[0][5]->move(2, 7);
-	b.board[2][2]->move(3, 2);
-	b.board[3][2]->move(4, 2);
-	b.board[3][6]->move(4, 6);
-	b.board[7][5]->move(6, 4);
-	b.board[1][3]->move(3, 3);
+	//b.board[6][4]->move(4, 4);
+	//b.board[7][4]->move(6, 4);
+	//b.board[6][4]->move(5, 4);
+	//b.board[1][2]->move(3, 2);
+	////b.board[0][3]->move(2, 1);	
+	//b.board[1][6]->move(3, 6);
+	//b.board[0][5]->move(2, 7);
+	//b.board[2][2]->move(3, 2);
+	//b.board[3][2]->move(4, 2);
+	//b.board[3][6]->move(4, 6);
+	//b.board[7][5]->move(6, 4);
+	//b.board[1][3]->move(3, 3);
 	//b.board[2][1]->move(4, 3);
 	//b.board[1][4]->move(3, 4);
 
 	
+	b.board[6][6]->move(4, 6);
+	b.board[6][5]->move(4, 5);
+	b.board[1][4]->move(3, 4);
+	b.board[0][3]->move(4, 7);
+	b.board[7][6]->move(5, 5);
 
 	checkWhite();
 	cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;

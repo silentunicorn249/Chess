@@ -24,24 +24,47 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
    
 
     int diffrow = abs(orow - nrow);
+    int diffcol = abs(ocol - ncol);
     int direction = 1;
     if (isWhite()) {
         direction = -1;
     }
+
+    if (diffcol != 0) {
+        return false;
+    }
+    if (diffrow > 2) {
+        return false;
+    }
     if (diffrow == 2) {
-        if (!isMoved()) {  //first move condition
-            ptr = b.board[orow + (direction * 2)][ocol];
+        ptr = b.board[orow + (direction * 1)][ocol];
+        if (!isMoved()) {
             if (!(ptr->getPiece())) {
-                return true;
+                ptr = b.board[orow + (direction * 2)][ocol];
+                if (!(ptr->getPiece())) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
+            else {
+                return false;
+            }
+
         }
-        else return false;
+        else { return false; }
     }
+
+    //Normal condition
     ptr = b.board[orow + (direction * 1)][ocol];
-    if (!(ptr->getPiece())) { //normal condition
+    if (!(ptr->getPiece())) {
         return true;
+    } 
+    else {
+        return false;
     }
-    
+
     for (int i = 0; i < avMoves.size(); i++) {
         ptr = avMoves[i];
         if ((ptr->getCol() == ncol) && ptr->getRow() == nrow) {

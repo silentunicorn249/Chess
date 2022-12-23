@@ -5,6 +5,7 @@
 #include"gBoard.h"
 #include <algorithm>
 #include <iterator>
+#include "Board.h"
 using namespace std;
 
 
@@ -111,13 +112,14 @@ bool CheckMateWhite()
 			}
 
 		}
-
+		
+		//Third case: defend king
 		for (int i = 0; i < b.Whitevec.size(); i++) {
 			for (int j = 0; j < b.Whitevec[i].size(); j++) {
 				for (int k = 0; k < b.BlackAttackerMoves.size(); k++) {
 					if (b.Whitevec[i][j] == b.BlackAttackerMoves[k]) {
 						ChangeBoardState(b, b.Whitevec[i][j]->getRow(), b.Whitevec[i][j]->getCol());
-						b.display();
+						//b.display();
 					}
 				}
 			}
@@ -127,6 +129,7 @@ bool CheckMateWhite()
 		if (b.PossibleSolutions.size() == 0 && b.kingPossibleSolutions.size() == 0) {
 			return true;
 		}
+		else return false;
 
 	}
 	else return false;
@@ -135,6 +138,7 @@ bool CheckMateWhite()
 void ChangeBoardState(Board& oldBoard, int row, int col)
 {
 	Board b2(oldBoard);//backup Board
+
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++)
@@ -152,17 +156,22 @@ void ChangeBoardState(Board& oldBoard, int row, int col)
 						if (!checkWhite())
 						{
 							b.display();
-							b.PossibleSolutions.push_back(b.board[i][j]);
+							b2.PossibleSolutions.push_back(b.board[i][j]);
 						}
-						b = b2;
+						//swap(b, b2);
 					}
 				}
 			}
 		}
 
 	}
+	//swap(b, b2);
 	b = b2;
 
+}
+
+void swap(Board& B1, Board& B2) {
+	B2 = B1;
 }
 
 void WhiteKingIter()
