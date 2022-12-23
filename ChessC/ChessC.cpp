@@ -71,10 +71,20 @@ int main()
 	b.board[7][5]->move(3, 1);*/
 
 	//Black fool's mate
-	b.board[1][5]->move(3, 5);
+	/*b.board[1][5]->move(3, 5);
 	b.board[1][6]->move(3, 6);
 	b.board[6][4]->move(4, 4);
+	b.board[7][3]->move(3, 7);*/
+
+
+	//Scholar's mate
+	b.board[6][4]->move(4, 4);
+	b.board[7][5]->move(4, 2);
+	b.board[0][1]->move(2, 2);
+	b.board[1][4]->move(3, 4);
+	b.board[0][6]->move(2, 5);
 	b.board[7][3]->move(3, 7);
+	b.board[3][7]->move(1, 5);
 
 	//defend king scenario
 
