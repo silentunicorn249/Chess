@@ -114,7 +114,8 @@ bool CheckMateWhite()
 			}
 
 		}
-
+		
+		//TODO: common avMoves with one not valid
 		//Third case: defend king
 		for (int k = 0; k < b.BlackAttackerMoves.size(); k++) {
 				ChangeBoardState(b, b.BlackAttackerMoves[k]->getRow(), b.BlackAttackerMoves[k]->getCol());
