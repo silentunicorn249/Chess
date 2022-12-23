@@ -43,6 +43,12 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
                 if (!(ptr->getPiece())) {
                     return true;
                 }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return false;
             }
        
         }
@@ -52,6 +58,9 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
     ptr = b.board[orow + (direction * 1)][ocol];
     if (!(ptr->getPiece())) {
         return true;
+    }
+    else {
+        return false;
     }
     
     for (int i = 0; i < avMoves.size(); i++) {
