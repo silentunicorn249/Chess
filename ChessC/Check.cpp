@@ -132,6 +132,60 @@ bool CheckMateWhite()
 	else return false;
 }
 
+bool CheckMateBlack()
+{
+	// we will make a new vector for saving available moves of the king
+	// return false when vector.size()>0
+	if (b.CountWhiteAttack == 2)
+	{
+		BlackKingIter();
+		//King possible not general possible
+		if (b.kingPossibleSolutions.size() == 0)
+			return true;
+		///////////////////Check for Backtrack
+		else return false;
+	}
+	else if (b.CountWhiteAttack == 1)
+	{
+		//first_Case:
+		BlackKingIter();
+		//second_Case (Kill attacker)
+		for (int i = 0; i < b.Blackvec.size(); i++)
+		{
+			for (int j = 0; j < b.Blackvec[i].size(); j++)
+			{
+				if (b.WhiteAttackerLoc->getRow() == b.Blackvec[i][j]->getRow() &&
+					b.WhiteAttackerLoc->getCol() == b.Blackvec[i][j]->getCol())
+				{
+					ChangeBoardState2(b, b.Blackvec[i][j]->getRow(), b.Blackvec[i][j]->getCol());
+					i = b.Blackvec.size();
+					break;
+				}
+			}
+
+		}
+
+		//TODO: common avMoves with one not valid
+		//Third case: defend king
+		for (int k = 0; k < b.WhiteAttackerMoves.size(); k++) {
+			ChangeBoardState2(b, b.WhiteAttackerMoves[k]->getRow(), b.WhiteAttackerMoves[k]->getCol());
+			//b.display();
+		}
+
+
+		if (b.PossibleSolutions.size() == 0 && b.kingPossibleSolutions.size() == 0) {
+			return true;
+		}
+		else return false;
+
+	}
+	else return false;
+}
+
+
+
+
+
 void ChangeBoardState(Board& oldBoard, int row, int col)
 {
 	Board b3 = Board(oldBoard);
@@ -169,6 +223,45 @@ void ChangeBoardState(Board& oldBoard, int row, int col)
 	b.PossibleSolutions = b3.PossibleSolutions;
 }
 
+void ChangeBoardState2(Board& oldBoard, int row, int col)
+{
+	Board b3 = Board(oldBoard);
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			if (b3.board[i][j]->getPiece() != nullptr)
+			{
+				if (!b3.board[i][j]->getPiece()->isWhite())
+				{
+					if (b3.board[i][j]->getPiece()->move(i, j, row, col))
+					{
+						Board b2(oldBoard);//backup Board
+						b.board[i][j]->move(row, col);
+						/*if ((!checkWhite() && !b.board[i][j]->getPiece()->isWhite()) ||
+							(checkBlack() && b.board[i][j]->getPiece()->isWhite())
+							)*/
+						if (!checkBlack())
+						{
+							b.display();
+							cout << "-----------------------" << endl;
+							b3.PossibleSolutions.push_back(b.board[i][j]);
+						}
+						//swap(b, b2);
+						b = b2;
+					}
+				}
+			}
+		}
+		//b = b3;
+
+	}
+	//swap(b, b2);
+	b = b3;
+	b.PossibleSolutions = b3.PossibleSolutions;
+}
+
+
 void swap(Board& B1, Board& B2) {
 	B2 = B1;
 }
@@ -202,6 +295,39 @@ void WhiteKingIter()
 			}
 			b = b2;
 			b.kingPossibleSolutions.push_back(b.WhiteKingMoves[i]);
+		}
+	}
+
+}
+void BlackKingIter()
+{
+
+	//SortVec();
+
+	for (int i = 0; i < b.BlackKingMoves.size(); i++)
+	{
+		bool found = false;
+		for (int j = 0; j < b.Whitevec.size(); j++)
+		{
+			for (int k = 0; k < b.Whitevec[j].size(); k++)
+			{
+				if (b.BlackKingMoves[i]->getRow() == b.Whitevec[j][k]->getRow()
+					&& (b.BlackKingMoves[i]->getCol() == b.Whitevec[j][k]->getCol())) {
+					found = true;
+				}
+
+			}
+		}
+		if (!found)
+		{
+			Board b2 = Board(b);
+			b.board[b.BlackKingLoc->getRow()][b.BlackKingLoc->getCol()]->move(b.BlackKingMoves[i]->getRow(), b.BlackKingMoves[i]->getCol());
+			if (checkBlack()) {
+				b = b2;
+				continue;
+			}
+			b = b2;
+			b.kingPossibleSolutions.push_back(b.BlackKingMoves[i]);
 		}
 	}
 

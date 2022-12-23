@@ -30,6 +30,7 @@ bool Rook::move(int orow, int ocol, int nrow, int ncol)
 }
 
 void Rook::getAllMoves(int row, int col) {
+	attack = false;
 	Square* ptr;
 	avMoves.clear();
 	for (int i = col + 1; i < 8; i++) {

@@ -49,6 +49,7 @@ bool King::move(int orow, int ocol, int nrow, int ncol)
 
 void King::getAllMoves(int row, int col)
 {
+	attack = false;
 	avMoves.clear();
 	Square* s = b.board[row][col];
 	Piece* p = s->piece;

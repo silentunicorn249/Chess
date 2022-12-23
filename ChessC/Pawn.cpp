@@ -82,6 +82,7 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 }
 
 void Pawn::getAllMoves(int row, int col) {
+    attack = false;
     rl = false;
     Square* ptr;
     avMoves.clear();

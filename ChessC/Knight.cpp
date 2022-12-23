@@ -29,6 +29,7 @@ bool Knight::move(int orow, int ocol, int nrow, int ncol)
 
 void Knight::getAllMoves(int row, int col)
 {
+	attack = false;
 	avMoves.clear();
 	Square* s = b.board[row][col];
 	Piece* p = s->piece;

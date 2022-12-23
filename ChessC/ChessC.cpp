@@ -31,15 +31,15 @@ int main()
 	//b.board[2][1]->move(4, 3);
 	//b.board[1][4]->move(3, 4);
 
-	//Fool's mate
+	//White Fool's mate
 	/*b.board[6][6]->move(4, 6);
 	b.board[6][5]->move(4, 5);
 	b.board[1][4]->move(3, 4);
 	b.board[0][3]->move(4, 7);
 	b.board[7][6]->move(5, 5);*/
 
-	//Rook bishop scenario
-	b.board[6][4]->move(4, 4);
+	//Rook bishop white check scenario
+	/*b.board[6][4]->move(4, 4);
 	b.board[7][4]->move(6, 4);
 	b.board[6][4]->move(5, 4);
 	b.board[1][0]->move(3, 0);
@@ -55,7 +55,26 @@ int main()
 	b.board[7][6]->move(5, 5);
 	b.board[7][3]->move(7, 5);
 	b.board[7][5]->move(6, 5);
-	b.board[4][2]->move(3, 3);
+	b.board[4][2]->move(3, 3);*/
+
+	//BlackKingIter scenario
+	/*b.board[7][1]->move(5, 2);
+	b.board[5][2]->move(4, 4);
+	b.board[4][4]->move(2, 5);*/
+
+	//Black defend scenario
+	/*b.board[1][2]->move(3, 2);
+	b.board[1][3]->move(3, 3);
+	b.board[6][4]->move(4, 4);
+	b.board[0][3]->move(3, 0);
+	b.board[3][0]->move(6, 0);
+	b.board[7][5]->move(3, 1);*/
+
+	//Black fool's mate
+	b.board[1][5]->move(3, 5);
+	b.board[1][6]->move(3, 6);
+	b.board[6][4]->move(4, 4);
+	b.board[7][3]->move(3, 7);
 
 	//defend king scenario
 
@@ -65,8 +84,10 @@ int main()
 
 
 
+	checkBlack();
+	cout << "\n"<<"IS IT BLACK CHECKMATE?????>>>>>"<<CheckMateBlack()<<endl;
 	checkWhite();
-	cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
+	cout << "\n"<<"IS IT WHITE CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
 	//b.board[4][0]->move(5, 0);
 	//b.board[6][1]->move(5, 0);
 	//cout << b.board[0][0]->getPiece()->getName();
