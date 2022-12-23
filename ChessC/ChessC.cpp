@@ -39,7 +39,7 @@ int main()
 	b.board[7][6]->move(5, 5);*/
 
 	//Rook bishop scenario
-	b.board[6][4]->move(4, 4);
+	/*b.board[6][4]->move(4, 4);
 	b.board[7][4]->move(6, 4);
 	b.board[6][4]->move(5, 4);
 	b.board[1][0]->move(3, 0);
@@ -55,6 +55,13 @@ int main()
 	b.board[7][6]->move(5, 5);
 	b.board[7][3]->move(7, 5);
 	b.board[7][5]->move(6, 5);
+	b.board[4][2]->move(3, 3);*/
+
+	//defend king scenario
+
+	b.board[1][2]->move(3, 2);
+	b.board[0][3]->move(3, 0);
+	b.board[6][3]->move(4, 3);
 
 
 
@@ -111,6 +118,7 @@ int main()
 	//b.board[4][0]->move(3, 0);
 	//b.board[3][0]->move(2, 0);
 	//Board b2 = Board(b);
+	//b.board[1][0]->move(4, 0);
 	b.display();
 
 

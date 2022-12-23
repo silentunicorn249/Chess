@@ -14,6 +14,7 @@ public:
 	vector<Square*> getVec();
 	void setVec(Board& bTest, vector<Square*>& moves);
 	vector<Square*> avMoves;
+	bool rl = false;
 
 private:
 

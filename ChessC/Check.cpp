@@ -108,21 +108,17 @@ bool CheckMateWhite()
 					b.BlackAttackerLoc->getCol() == b.Whitevec[i][j]->getCol())
 				{
 					ChangeBoardState(b, b.Whitevec[i][j]->getRow(), b.Whitevec[i][j]->getCol());
+					i = b.Whitevec.size();
+					break;
 				}
 			}
 
 		}
-		
+
 		//Third case: defend king
-		for (int i = 0; i < b.Whitevec.size(); i++) {
-			for (int j = 0; j < b.Whitevec[i].size(); j++) {
-				for (int k = 0; k < b.BlackAttackerMoves.size(); k++) {
-					if (b.Whitevec[i][j] == b.BlackAttackerMoves[k]) {
-						ChangeBoardState(b, b.Whitevec[i][j]->getRow(), b.Whitevec[i][j]->getCol());
-						//b.display();
-					}
-				}
-			}
+		for (int k = 0; k < b.BlackAttackerMoves.size(); k++) {
+				ChangeBoardState(b, b.BlackAttackerMoves[k]->getRow(), b.BlackAttackerMoves[k]->getCol());
+				//b.display();
 		}
 
 
@@ -189,13 +185,21 @@ void WhiteKingIter()
 			for (int k = 0; k < b.Blackvec[j].size(); k++)
 			{
 				if (b.WhiteKingMoves[i]->getRow() == b.Blackvec[j][k]->getRow()
-					&& (b.WhiteKingMoves[i]->getCol() == b.Blackvec[j][k]->getCol()))
+					&& (b.WhiteKingMoves[i]->getCol() == b.Blackvec[j][k]->getCol())) {
 					found = true;
+				}
 
 			}
 		}
 		if (!found)
 		{
+			Board b2 = Board(b);
+			b.board[b.WhiteKingLoc->getRow()][b.WhiteKingLoc->getCol()]->move(b.WhiteKingMoves[i]->getRow(), b.WhiteKingMoves[i]->getCol());
+			if (checkWhite()) {
+				b = b2;
+				continue;
+			}
+			b = b2;
 			b.kingPossibleSolutions.push_back(b.WhiteKingMoves[i]);
 		}
 	}

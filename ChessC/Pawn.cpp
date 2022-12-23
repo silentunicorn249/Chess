@@ -17,20 +17,24 @@ Pawn::Pawn(bool white, bool motion, bool attack) : Piece(white, motion, attack) 
 
 bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 {
+    rl = false;
     getAllMoves(orow, ocol);
 
 
     Square* ptr;
-   
 
-    int diffrow = abs(orow - nrow);
+
+    int diffrow = orow - nrow;
     int diffcol = abs(ocol - ncol);
     int direction = 1;
     if (isWhite()) {
         direction = -1;
     }
-
-    if (diffcol != 0) {
+    if ((isWhite() && diffrow < 0) || (!isWhite() && diffrow > 0)) {
+        return false;
+    }
+    diffrow = abs(orow - nrow);
+    if (diffcol != 0 && !rl) {
         return false;
     }
     if (diffrow > 2) {
@@ -57,7 +61,7 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
     }
 
     //Normal condition
-    ptr = b.board[orow + (direction * 1)][ocol];
+    ptr = b.board[orow + direction][ocol];
     if (!(ptr->getPiece())) {
         return true;
     } 
@@ -71,14 +75,18 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
             return true;
         }
     }
+
     return false;
 
 
 }
 
 void Pawn::getAllMoves(int row, int col) {
+    rl = false;
     Square* ptr;
     avMoves.clear();
+
+
     //cout << row << " " << col << " " << avMoves.size();
     int direction = 1;
     if (isWhite()) {
@@ -87,23 +95,25 @@ void Pawn::getAllMoves(int row, int col) {
 
 
     if (col < 7) {
-        ptr = b.board[(row + (direction * 1))][(col + 1)];
+        ptr = b.board[row + direction][(col + 1)];
         if (ptr->getPiece()) {
             if (isWhite() != ptr->getPiece()->isWhite()) { //attacking right condition 
 
                 if (ptr->getPiece()->getName() == 'K')
                     attack = true;
+                rl = true;
                 avMoves.push_back(ptr);
             }
         }
         else avMoves.push_back(ptr);
     }
     if (col > 0) {
-        ptr = b.board[(row + direction * 1)][(col - 1)];
+        ptr = b.board[row + direction][(col - 1)];
         if (ptr->getPiece()) {
             if (isWhite() != ptr->getPiece()->isWhite()) { //attacking left condition
                 if (ptr->getPiece()->getName() == 'K')
                     attack = true;
+                rl = true;
                 avMoves.push_back(ptr);
             }
         }
