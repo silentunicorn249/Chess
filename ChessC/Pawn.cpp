@@ -37,7 +37,7 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
     if (diffcol != 0 && !rl) {
         return false;
     }
-    if (diffrow > 2) {
+    if (diffrow > 2||diffcol>=2) {
         return false;
     }
     if (diffrow == 2) {
