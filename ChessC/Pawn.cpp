@@ -19,26 +19,38 @@ bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 {
     getAllMoves(orow, ocol);
 
-
     Square* ptr;
    
 
     int diffrow = abs(orow - nrow);
+    int diffcol = abs(ocol - ncol);
     int direction = 1;
     if (isWhite()) {
         direction = -1;
     }
-    if (diffrow == 2) {
-        if (!isMoved()) {  //first move condition
-            ptr = b.board[orow + (direction * 2)][ocol];
-            if (!(ptr->getPiece())) {
-                return true;
-            }
-        }
-        else return false;
+
+    if (diffcol != 0) {
+        return false;
     }
+    if (diffrow > 2) {
+        return false;
+    }
+    if (diffrow == 2) {
+        ptr = b.board[orow + (direction * 1)][ocol];
+        if (!isMoved()) {
+            if (!(ptr->getPiece())) {
+                ptr = b.board[orow + (direction * 2)][ocol];
+                if (!(ptr->getPiece())) {
+                    return true;
+                }
+            }
+       
+        }
+        else { return false; }
+    }
+    cout << "NORMAL" << endl;
     ptr = b.board[orow + (direction * 1)][ocol];
-    if (!(ptr->getPiece())) { //normal condition
+    if (!(ptr->getPiece())) {
         return true;
     }
     
