@@ -163,8 +163,13 @@ vector<Square*> Bishop::getVec()
 	return avMoves;
 }
 
-void Bishop::setVec(vector<Square*>& moves)
+void Bishop::setVec(Board& bTest, vector<Square*>& moves)
 {
-	avMoves = moves;
-}
+	for (int i = 0; i < moves.size(); i++) {
 
+		int row = moves[i]->getRow();
+		int col = moves[i]->getCol();
+
+		avMoves.push_back(bTest.board[row][col]);
+	}
+}

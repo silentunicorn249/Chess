@@ -116,9 +116,15 @@ vector<Square*> Pawn::getVec()
     return avMoves;
 }
 
-void Pawn::setVec(vector<Square*>& moves)
+void Pawn::setVec(Board& bTest,vector<Square*>& moves)
 {
-    avMoves = moves;
+    for (int i = 0; i < moves.size(); i++) {
+
+        int row = moves[i]->getRow();
+        int col = moves[i]->getCol();
+
+        avMoves.push_back(bTest.board[row][col]);
+    }
 }
 
 

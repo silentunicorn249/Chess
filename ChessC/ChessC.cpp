@@ -58,8 +58,8 @@ int main()
 
 
 
-	//checkWhite();
-	//cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
+	checkWhite();
+	cout << "\n"<<"IS IT CHECKMATE?????>>>>>"<<CheckMateWhite()<<endl;
 	//b.board[4][0]->move(5, 0);
 	//b.board[6][1]->move(5, 0);
 	//cout << b.board[0][0]->getPiece()->getName();
@@ -107,7 +107,10 @@ int main()
 	//AllPossibleMoves();
 
 	//b.board[0][1]->move(2, 0);
-	Board b2 = Board(b);
+	//b.board[6][0]->move(4, 0);
+	//b.board[4][0]->move(3, 0);
+	//b.board[3][0]->move(2, 0);
+	//Board b2 = Board(b);
 	b.display();
 
 

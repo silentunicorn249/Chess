@@ -137,18 +137,18 @@ bool CheckMateWhite()
 
 void ChangeBoardState(Board& oldBoard, int row, int col)
 {
-	Board b2(oldBoard);//backup Board
-
+	Board b3 = Board(oldBoard);
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++)
 		{
-			if (b.board[i][j]->getPiece() != nullptr)
+			if (b3.board[i][j]->getPiece() != nullptr)
 			{
-				if (b.board[i][j]->getPiece()->isWhite())
+				if (b3.board[i][j]->getPiece()->isWhite())
 				{
-					if (b.board[i][j]->getPiece()->move(i, j, row, col))
+					if (b3.board[i][j]->getPiece()->move(i, j, row, col))
 					{
+						Board b2(oldBoard);//backup Board
 						b.board[i][j]->move(row, col);
 						/*if ((!checkWhite() && !b.board[i][j]->getPiece()->isWhite()) ||
 							(checkBlack() && b.board[i][j]->getPiece()->isWhite())
@@ -156,9 +156,10 @@ void ChangeBoardState(Board& oldBoard, int row, int col)
 						if (!checkWhite())
 						{
 							b.display();
-							b2.PossibleSolutions.push_back(b.board[i][j]);
+							b3.PossibleSolutions.push_back(b.board[i][j]);
 						}
 						//swap(b, b2);
+						b = b2;
 					}
 				}
 			}
@@ -166,7 +167,7 @@ void ChangeBoardState(Board& oldBoard, int row, int col)
 
 	}
 	//swap(b, b2);
-	b = b2;
+	b = b3;
 
 }
 

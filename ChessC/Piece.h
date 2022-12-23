@@ -4,6 +4,7 @@
 using namespace std;
 
 class Square;
+class Board;
 class Piece
 {
 public:
@@ -17,7 +18,7 @@ public:
 
 	virtual void getAllMoves(int row, int col) = 0;
 	virtual vector<Square*> getVec() = 0;
-	virtual void setVec(vector<Square*>& moves) = 0;
+	virtual void setVec(Board& bTest, vector<Square*>& moves) = 0;
 
 
 protected:

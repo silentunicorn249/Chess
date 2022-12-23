@@ -40,7 +40,8 @@ void Square::move(int nrow, int ncol)
 				AllPossibleMoves();
 				
 				// if (check()) return to original state
-				cout << "moving" << endl;
+				/*char name = piece->getName();
+				cout << "moving " << name<<row << " "<< col << " to " << nrow << " "<< ncol << endl;*/
 			}
 			else {
 				cout << "cannot move" << endl;

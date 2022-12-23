@@ -81,9 +81,12 @@ Board::Board(const Board& oBoard) {
 				//cout << "Creating Pawn" << endl;
 				p = new Pawn(np->isWhite(), np->isMoved(), np->isAttack());
 			}
+
+			//Fix avmoves
 			vector<Square*> temp = np->getVec();
-			p->setVec(temp);
 			
+			
+			p->setVec(*this, temp);
 
 
 			//cout << "Assigning piece" << endl;
@@ -109,22 +112,17 @@ Board::Board(const Board& oBoard) {
 }
 
 void Board::copy2D(vector<vector<Square*>> orig, vector<vector<Square*>>& copy) {
-	cout << "called" << endl;
+	//cout << "called" << endl;
 	for (int i = 0; i < orig.size(); i++) {
 		vector<Square*> temp;
 		for (int j = 0; j < orig[i].size(); j++) {
 			//cout << "WESL HENA YA TEEEEET" << endl;
+			Piece* p = nullptr;
 			int row = orig[i][j]->getRow();
 			int col = orig[i][j]->getCol();
 
-			Piece* np = orig[i][j]->getPiece();
-			if (np == nullptr) {
-				//cout << "Creating empty square" << endl;
-				Square* sInside = new Square(row, col, nullptr);
-				temp.push_back (sInside);
-				continue;
-			}
-			Square* s = new Square(row, col, np);
+
+			Square* s= board[row][col];
 			temp.push_back(s);
 		}
 		copy.push_back(temp);

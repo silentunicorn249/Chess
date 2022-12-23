@@ -96,6 +96,13 @@ vector<Square*> Rook::getVec()
 	return avMoves;
 }
 
-void Rook::setVec(vector<Square*>& moves) {
-	avMoves = moves;
+void Rook::setVec(Board& bTest, vector<Square*>& moves)
+{
+	for (int i = 0; i < moves.size(); i++) {
+
+		int row = moves[i]->getRow();
+		int col = moves[i]->getCol();
+
+		avMoves.push_back(bTest.board[row][col]);
+	}
 }

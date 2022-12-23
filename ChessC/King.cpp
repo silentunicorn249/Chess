@@ -181,8 +181,13 @@ vector<Square*> King::getVec()
 	return avMoves;
 }
 
-void King::setVec(vector<Square*>& moves)
+void King::setVec(Board& bTest, vector<Square*>& moves)
 {
-	avMoves = moves;
-}
+	for (int i = 0; i < moves.size(); i++) {
 
+		int row = moves[i]->getRow();
+		int col = moves[i]->getCol();
+
+		avMoves.push_back(bTest.board[row][col]);
+	}
+}
