@@ -83,14 +83,15 @@ Board::Board(const Board& oBoard) {
 			}
 
 			//Fix avmoves
-			vector<Square*> temp = np->getVec();
+			//vector<Square*> temp = np->getVec();
 			
 			
-			p->setVec(*this, temp);
+			//p->setVec(*this, temp);
 
 
 			//cout << "Assigning piece" << endl;
 			Square* s = new Square(i, j, p);
+			//s->getPiece()->setVec(*this, temp);
 			this->board[i][j] = s;
 
 		}
@@ -109,6 +110,17 @@ Board::Board(const Board& oBoard) {
 	copySquare(oBoard.WhiteKingLoc, WhiteKingLoc);
 	CountBlackAttack = oBoard.CountBlackAttack;
 	CountWhiteAttack = oBoard.CountWhiteAttack;
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			Piece* p = oBoard.board[i][j]->getPiece();
+			if (p != nullptr) {
+				vector<Square*> temp = p->getVec();
+				board[i][j]->getPiece()->setVec(*this, temp);
+			}
+		}
+	}
+
 }
 
 void Board::copy2D(vector<vector<Square*>> orig, vector<vector<Square*>>& copy) {

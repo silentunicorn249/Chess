@@ -164,11 +164,12 @@ void ChangeBoardState(Board& oldBoard, int row, int col)
 				}
 			}
 		}
+		//b = b3;
 
 	}
 	//swap(b, b2);
 	b = b3;
-
+	b.PossibleSolutions = b3.PossibleSolutions;
 }
 
 void swap(Board& B1, Board& B2) {
