@@ -16,7 +16,7 @@ Rook::Rook(bool white, bool motion, bool attack) : Piece(white, motion, attack) 
 bool Rook::move(int orow, int ocol, int nrow, int ncol)
 {
 	getAllMoves(orow, ocol);
-	cout << endl << avMoves.size() << endl << endl;
+	//cout << endl << avMoves.size() << endl << endl;
 
 	Square* ptr;
 	for (int i = 0; i < avMoves.size(); i++) {
@@ -96,3 +96,6 @@ vector<Square*> Rook::getVec()
 	return avMoves;
 }
 
+void Rook::setVec(vector<Square*>& moves) {
+	avMoves = moves;
+}

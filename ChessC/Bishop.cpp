@@ -163,3 +163,8 @@ vector<Square*> Bishop::getVec()
 	return avMoves;
 }
 
+void Bishop::setVec(vector<Square*>& moves)
+{
+	avMoves = moves;
+}
+

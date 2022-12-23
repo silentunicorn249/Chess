@@ -167,3 +167,8 @@ vector<Square*> Knight::getVec()
 {
 	return avMoves;
 }
+
+void Knight::setVec(vector<Square*>& moves)
+{
+	avMoves = moves;
+}

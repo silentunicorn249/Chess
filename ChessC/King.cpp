@@ -181,3 +181,8 @@ vector<Square*> King::getVec()
 	return avMoves;
 }
 
+void King::setVec(vector<Square*>& moves)
+{
+	avMoves = moves;
+}
+

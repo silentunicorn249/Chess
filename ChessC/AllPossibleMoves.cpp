@@ -4,15 +4,15 @@
 #include"gBoard.h"
 #include"Board.h"
 #include <iostream>
-#include "gPossible.h"
+//#include "gPossible.h"
 
 using namespace std;
 
 void AllPossibleMoves()
 {
-	cout << "STarting allmoves" << endl;
-	Blackvec.clear();
-	Whitevec.clear();
+	//cout << "STarting allmoves" << endl;
+	b.Blackvec.clear();
+	b.Whitevec.clear();
 	Square* ptr;
 	for (int i = 0; i < 8; i++)
 	{
@@ -27,17 +27,17 @@ void AllPossibleMoves()
 				);
 				if (!(ptr->getPiece()->isWhite()))
 				{
-					Blackvec.push_back(ptr->getPiece()->getVec());
+					b.Blackvec.push_back(ptr->getPiece()->getVec());
 				}
 				else
 				{
-					Whitevec.push_back(ptr->getPiece()->getVec());
+					b.Whitevec.push_back(ptr->getPiece()->getVec());
 				}
 			}
 
 		}
 	}
-	cout << Blackvec.size() << endl;
+	/*cout << Blackvec.size() << endl;
 	for (int i = 0; i < Blackvec.size(); i++) {
 		for (int j = 0; j < Blackvec[i].size(); j++) {
 			cout << Blackvec[i][j]->getRow() << ", " << Blackvec[i][j]->getCol() << endl;
@@ -45,7 +45,7 @@ void AllPossibleMoves()
 		}
 		
 		cout << "ended piece " <<endl;
-	}
+	}*/
 	
 
 }

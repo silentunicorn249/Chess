@@ -12,19 +12,7 @@
 
 using namespace std;
 Board b = Board();
-vector<vector<Square*>> Blackvec;
-vector<vector<Square*>> Whitevec;
-vector<Square*>WhiteAttackerMoves;
-vector<Square*>BlackAttackerMoves;
-vector<Square*>WhiteKingMoves;
-vector<Square*>BlackKingMoves;
-vector<Square*>PossibleSolutions;
-Square* BlackAttackerLoc;
-Square* BlackKingLoc;
-Square* WhiteAttackerLoc;
-Square* WhiteKingLoc;
-int CountWhiteAttack;
-int CountBlackAttack;
+
 int main()
 {
 	//Checkmate Scenario
@@ -32,7 +20,7 @@ int main()
 	b.board[7][4]->move(6, 4);
 	b.board[6][4]->move(5, 4);
 	b.board[1][2]->move(3, 2);
-	b.board[0][3]->move(2, 1);	
+	//b.board[0][3]->move(2, 1);	
 	b.board[1][6]->move(3, 6);
 	b.board[0][5]->move(2, 7);
 	b.board[2][2]->move(3, 2);

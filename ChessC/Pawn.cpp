@@ -93,4 +93,9 @@ vector<Square*> Pawn::getVec()
     return avMoves;
 }
 
+void Pawn::setVec(vector<Square*>& moves)
+{
+    avMoves = moves;
+}
+
 

@@ -13,10 +13,11 @@ public:
 
 	void getAllMoves(int row, int col);
 	vector<Square*> getVec();
+	void setVec(vector<Square*>& moves);
+	vector<Square*> avMoves;
 
 
 private:
-	vector<Square*> avMoves;
 
 
 };

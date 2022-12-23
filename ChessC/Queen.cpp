@@ -194,7 +194,7 @@ void Queen::getAllMoves(int row, int col)
 	for (int i = col + 1; i < 8; i++) {
 		ptr = b.board[row][i];
 		if (!(ptr->getPiece())) {
-			cout << "right" << endl;
+			//cout << "right" << endl;
 			avMoves.push_back(ptr);
 		}
 		else {
@@ -210,7 +210,7 @@ void Queen::getAllMoves(int row, int col)
 	for (int i = col - 1; i >= 0; i--) {
 		ptr = b.board[row][i];
 		if (!(ptr->getPiece())) {
-			cout << "left" << endl;
+			//cout << "left" << endl;
 			avMoves.push_back(ptr);
 		}
 		else {
@@ -226,7 +226,7 @@ void Queen::getAllMoves(int row, int col)
 	for (int i = row + 1; i < 8; i++) {
 		ptr = b.board[i][col];
 		if (!(ptr->getPiece())) {
-			cout << "down" << endl;
+			//cout << "down" << endl;
 			avMoves.push_back(ptr);
 		}
 		else {
@@ -242,7 +242,7 @@ void Queen::getAllMoves(int row, int col)
 	for (int i = row - 1; i >= 0; i--) {
 		ptr = b.board[i][col];
 		if (!(ptr->getPiece())) {
-			cout << "up" << endl;
+			//cout << "up" << endl;
 			avMoves.push_back(ptr);
 		}
 		else {
@@ -260,4 +260,9 @@ void Queen::getAllMoves(int row, int col)
 vector<Square*> Queen::getVec()
 {
 	return avMoves;
+}
+
+void Queen::setVec(vector<Square*>& moves)
+{
+	avMoves = moves;
 }

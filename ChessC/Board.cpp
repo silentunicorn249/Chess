@@ -81,6 +81,23 @@ Board::Board(const Board& oBoard) {
 				//cout << "Creating Pawn" << endl;
 				p = new Pawn(np->isWhite(), np->isMoved(), np->isAttack());
 			}
+			vector<Square*> temp = np->getVec();
+			p->setVec(temp);
+			Blackvec = oBoard.Blackvec;
+			Whitevec = oBoard.Whitevec;
+			WhiteAttackerMoves = oBoard.WhiteAttackerMoves;
+			BlackAttackerMoves = oBoard.BlackAttackerMoves;
+			WhiteKingMoves = oBoard.WhiteKingMoves;
+			BlackKingMoves = oBoard.BlackKingMoves;
+			PossibleSolutions = oBoard.PossibleSolutions;
+			kingPossibleSolutions = oBoard.kingPossibleSolutions;
+			BlackAttackerLoc = oBoard.BlackAttackerLoc;
+			BlackKingLoc = oBoard.BlackKingLoc;
+			WhiteAttackerLoc = oBoard.WhiteAttackerLoc;
+			WhiteKingLoc = oBoard.WhiteKingLoc;
+			CountBlackAttack = oBoard.CountBlackAttack;
+			CountWhiteAttack = oBoard.CountWhiteAttack;
+
 			//cout << "Assigning piece" << endl;
 			Square* s = new Square(i, j, p);
 			this->board[i][j] = s;

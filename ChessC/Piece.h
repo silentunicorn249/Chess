@@ -1,5 +1,8 @@
 #pragma once
 #include <vector>
+
+using namespace std;
+
 class Square;
 class Piece
 {
@@ -13,7 +16,8 @@ public:
 	bool isWhite();
 
 	virtual void getAllMoves(int row, int col) = 0;
-	virtual std::vector<Square*> getVec() = 0;
+	virtual vector<Square*> getVec() = 0;
+	virtual void setVec(vector<Square*>& moves) = 0;
 
 
 protected:
@@ -21,16 +25,6 @@ protected:
 	bool motion; //this should be changed in the children classes to true if the move function returns true
 	bool attack;
 	//todo: clean code
-	const int NONE = 0;
-	const int KING = 1;
-	const int PAWN = 2;
-	const int KNIGHT = 4;
-	const int BISHOP = 5;
-	const int ROOK = 6;
-	const int QUEEN = 7;
-
-	const int WHITE = 8;
-	const int BLACK = 16;
 
 private:
 
