@@ -35,7 +35,7 @@ void Square::move(int nrow, int ncol)
 				piece->setMove(true);
 
 				//cout << b.board[row][col]->getPiece()->getName();
-				// save state into b2
+				// save state into b2 which prevents self check and corner case
 				Exchange(b.board[row][col], b.board[nrow][ncol]);
 				AllPossibleMoves();
 				

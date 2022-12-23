@@ -17,6 +17,11 @@ Pawn::Pawn(bool white, bool motion, bool attack) : Piece(white, motion, attack) 
 
 bool Pawn::move(int orow, int ocol, int nrow, int ncol)
 {
+    //if check
+    //iterate over avMoves
+    //check if valid move
+    //clear avMoves
+
     rl = false;
     getAllMoves(orow, ocol);
 

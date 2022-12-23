@@ -246,6 +246,7 @@ void ChangeBoardState2(Board& oldBoard, int row, int col)
 							b.display();
 							cout << "-----------------------" << endl;
 							b3.PossibleSolutions.push_back(b.board[i][j]);
+							//appendVec of piece
 						}
 						//swap(b, b2);
 						b = b2;
