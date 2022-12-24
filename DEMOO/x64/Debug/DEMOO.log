@@ -1,0 +1,67 @@
+﻿Environment at start of build:
+ALLUSERSPROFILE = C:\ProgramData
+APPDATA = C:\Users\nourn\AppData\Roaming
+AVR32_HOME = C:\Users\nourn\OneDrive\Desktop\AVR
+CommonProgramFiles = C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
+CommonProgramW6432 = C:\Program Files\Common Files
+COMPUTERNAME = NOUR-PC
+ComSpec = C:\WINDOWS\system32\cmd.exe
+DokanLibrary1 = C:\Program Files\Dokan\Dokan Library-1.4.1\
+DokanLibrary1_LibraryPath_x64 = C:\Program Files\Dokan\Dokan Library-1.4.1\lib\
+DokanLibrary1_LibraryPath_x86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
+DriverData = C:\Windows\System32\Drivers\DriverData
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING = Default
+HOMEDRIVE = C:
+HOMEPATH = \Users\nourn
+LM_LICENSE = C:\flexlm
+LM_LICENSE_FILE = C:\flexlm\lic_questasim.TXT
+LOCALAPPDATA = C:\Users\nourn\AppData\Local
+LOGONSERVER = \\NOUR-PC
+MGLS_LICENSE_FILE = C:\questasim64_10.7c\filexlm\LICENSE.TXT
+MSBuildLoadMicrosoftTargetsReadOnly = true
+NUMBER_OF_PROCESSORS = 12
+OneDrive = C:\Users\nourn\OneDrive
+OS = Windows_NT
+Path = C:\Program Files (x86)\Embarcadero\Studio\21.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\21.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\Win64;C:\Users\nourn\OneDrive\Desktop\AVR\bin;C:\Users\nourn\OneDrive\Desktop\AVR\utils\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\nourn\Downloads\Code Blocks 2\CodeBlocks\MinGW\bin;C:\Users\nourn\Downloads\Code Blocks\CodeBlocks\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\nourn\AppData\Local\Microsoft\WindowsApps;C:\Users\nourn\.dotnet\tools;C:\modeltech64_10.6d\win64;C:\Users\nourn\AppData\Local\GitHubDesktop\bin;C:\questasim64_10.7c\win64;C:\questasim64_10.6c\win64
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PkgDefApplicationConfigFile = C:\Users\nourn\AppData\Local\Microsoft\VisualStudio\16.0_b65f58f4\devenv.exe.config
+PROCESSOR_ARCHITECTURE = x86
+PROCESSOR_ARCHITEW6432 = AMD64
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL = 6
+PROCESSOR_REVISION = a502
+ProgramData = C:\ProgramData
+ProgramFiles = C:\Program Files (x86)
+ProgramFiles(x86) = C:\Program Files (x86)
+ProgramW6432 = C:\Program Files
+PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC = C:\Users\Public
+QtMsBuild = C:\Users\nourn\AppData\Local\QtMsBuild
+ServiceHubLogSessionKey = BC58F1AA
+SESSIONNAME = Console
+SystemDrive = C:
+SystemRoot = C:\WINDOWS
+TEMP = C:\Users\nourn\AppData\Local\Temp
+ThreadedWaitDialogDpiContext = -4
+TMP = C:\Users\nourn\AppData\Local\Temp
+USERDOMAIN = NOUR-PC
+USERDOMAIN_ROAMINGPROFILE = NOUR-PC
+USERNAME = nourn
+USERPROFILE = C:\Users\nourn
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+VisualStudioDir = C:\Users\nourn\OneDrive\Documents\Visual Studio 2019
+VisualStudioEdition = Microsoft Visual Studio Community 2019
+VisualStudioVersion = 16.0
+VSAPPIDDIR = C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\
+VSAPPIDNAME = devenv.exe
+VSLANG = 1033
+VSSKUEDITION = Community
+windir = C:\WINDOWS
+
+  moc DEMOO.h
+  DEMOO.cpp
+  main.cpp
+  moc_DEMOO.cpp
+  DEMOO.vcxproj -> C:\Users\nourn\source\repos\DEMOO - Copy\x64\Debug\DEMOO.exe

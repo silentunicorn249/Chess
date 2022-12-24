@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DEMOO.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="DEMOO.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtMoc Include="DEMOO.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="DEMOO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bishop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Queen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="King.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllPossibleMoves.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Check.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Board.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gBoard.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bishop.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Queen.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="King.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Square.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllPossibleMoves.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gPossible.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Check.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\pngegg.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wqueen.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wbishop.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wrook.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wking.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wknight.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\White\Wpawn.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Bpawn.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Bqueen.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Brook.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Bbishop.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Bking.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Saved Pictures\Black\Bknight.png">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
